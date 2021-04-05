@@ -1,0 +1,41 @@
+{
+    "configurations": [
+
+        {
+            "name": "EcommerceAPI",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "python": "${env:HOME}/.virtualenvs/ecommerce-api/bin/python",
+            "module": "flask",
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "FLASK_APP": "run.py"
+            },
+            "envFile": "../ecommerce-api.env",
+            // "program": "${workspaceFolder}/run.py",
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload",
+                "--port=5000"
+            ],
+            "jinja": true,
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Testes Unitários",
+            "type": "python",
+            "request": "launch",
+            "stopOnEntry": false,
+            "python": "${env:HOME}/.virtualenvs/ecommerce-api/bin/python",
+            "envFile": "../ecommerce-api.env",
+            "module": "unittest",
+            "args": [
+                "run_tests",
+                "-v"
+            ]
+        },
+    ]
+}
