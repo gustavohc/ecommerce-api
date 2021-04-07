@@ -34,6 +34,12 @@ def init_migrate(app):
   LOGGER.info("Flask Migrate configurated")
 
 
+def init_iam(app):
+  from ecommerce_api.api.rest.auth.iam import Iam
+  iam = Iam()
+  iam.init_app(app, url_prefix='auth')
+  LOGGER.info("IAM configurated")
+
 def init_cors(app):
   CORS(
     app,
@@ -56,6 +62,7 @@ def create_app():
   init_cors(app)
   init_sqlalquemy(app)
   init_migrate(app)
+  init_iam(app)
   init_api(app)
 
   return app

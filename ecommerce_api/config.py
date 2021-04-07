@@ -4,6 +4,8 @@ import os
 class Config():
   DATABASE_URL = os.environ.get('DATABASE_URL')
   APP_WEB_URL = os.environ.get('APP_WEB_URL')
+  PASSWORD_SALT = os.environ.get('PASSWORD_SALT')
+  SECRET_KEY = os.environ.get('SECRET_KEY')
   VERSION="v1"
 
   SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
