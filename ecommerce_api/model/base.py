@@ -28,3 +28,8 @@ class AuditedModelBase():
   @staticmethod
   def audit_on_update(mapper, connection, target):
       target.updated_at = datetime.utcnow()
+
+  @classmethod
+  def __declare_last__(cls):
+    event.listen(cls, 'before_insert', cls.audit_on_insert)
+    event.listen(cls, 'before_update', cls.audit_on_update)
