@@ -34,3 +34,8 @@ Next step is updgrade the database with alembic revision, for this run th follow
 ```bash
 export $(cat ecommerce-api.env | xargs) && flask db upgrade
 ```
+
+Finaly, the last step is to run the server, you can do it by the command:
+```bash
+python run.py
+```
