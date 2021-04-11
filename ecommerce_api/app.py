@@ -57,6 +57,12 @@ def init_api(app):
   LOGGER.info("API endpoints configurated")
 
 
+def api_actions(app):
+  from ecommerce_api.api.rest.action.attach_coupon import actions
+
+  app.register_blueprint(actions)
+
+
 def create_app():
   app = init_flask()
   init_cors(app)
@@ -64,5 +70,6 @@ def create_app():
   init_migrate(app)
   init_iam(app)
   init_api(app)
+  api_actions(app)
 
   return app

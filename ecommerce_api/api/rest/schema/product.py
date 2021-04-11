@@ -1,6 +1,5 @@
 from marshmallow import fields
-
-from ecommerce_api.api.rest.schema import BaseSchema, coupon
+from ecommerce_api.api.rest.schema import BaseSchema
 
 
 class ProductSchema(BaseSchema):
@@ -8,4 +7,4 @@ class ProductSchema(BaseSchema):
   description = fields.String()
   price = fields.Decimal(as_string=True)
   
-  coupons = fields.Nested(coupon.CouponSchema)
+  coupons = fields.Nested('CouponSchema', exclude=('products',), many=True)

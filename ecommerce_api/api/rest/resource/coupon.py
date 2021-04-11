@@ -8,11 +8,11 @@ class CouponResource(BaseResource):
 
   def _methods(self):
     return {
-        'GET': True,
-        'POST': True,
-        'QUERY': True,
-        'PATCH': True,
-        'DELETE': True,
+        'GET': self.check_authentication(),
+        'POST': self.check_authentication(),
+        'QUERY': self.check_authentication(),
+        'PATCH': self.check_authentication(),
+        'DELETE': self.check_authentication(),
     }
 
   def _schema(self, method):

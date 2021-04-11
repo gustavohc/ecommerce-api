@@ -7,3 +7,5 @@ class CouponSchema(BaseSchema):
   code = fields.String()
   discount_percent = fields.Decimal(as_string=True, allow_none=True)
   discount_value = fields.Decimal(as_string=True, allow_none=True)
+
+  products = fields.Nested('ProductSchema', exclude=('coupons',), many=True)
