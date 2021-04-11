@@ -10,7 +10,7 @@ API python com FLASK para um exemplo de ecommerce
 First, create the virtualenv for python 
 to isolate the project libs from the O.S.
 ```bash
-mkdir ~/.virtualenvs && python3 -m venv ~/.virtualenvs/ecommerce-api
+mkdir ~/.virtualenvs && python -m venv ~/.virtualenvs/ecommerce-api
 ```
 Active the virtualenv and install the dependencies
 ```bash
